@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title id="page-title">Project Title - Matt Peterson</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="main-nav">
+      <!-- Navigation will be populated by nav.js -->
+    </nav>
+
+    <main role="main">
+      <section class="project-hero">
+        <div class="project-hero-content">
+          <h1 id="project-name">Project Title</h1>
+          <p id="project-subtitle">Project Subtitle or Brief Description</p>
+        </div>
+      </section>
+      <section id="featured-projects" class="section fade-in">
+        <div class="projects-container">
+          <button class="scroll-arrow left" id="scrollLeft">❮</button>
+          <div class="projects-scroll-container">
+            <div class="projects-scroll"></div>
+          </div>
+          <button class="scroll-arrow right" id="scrollRight">❯</button>
+        </div>
+      </section>
+      <section id="project-video" class="section fade-in">
+        <div class="video-container">
+          <iframe
+            id="youtube-embed"
+            width="560"
+            height="315"
+            src=""
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          ></iframe>
+          <video
+            id="project-videoFile"
+            src=""
+            width="100%"
+            controls="true"
+            autoplay="true"
+            loop="true"
+            muted="true"
+            playsinline
+          ></video>
+        </div>
+      </section>
+
+      <section id="project-description" class="section fade-in">
+        <p id="description-content"></p>
+      </section>
+
+      <section id="skills-developed" class="section fade-in">
+        <h2>Skills Developed</h2>
+        <div id="skills-container" class="skills-container">
+          <!-- Skills will be populated dynamically -->
+        </div>
+      </section>
+
+      <section id="my-role" class="section fade-in">
+        <h2>My Role</h2>
+        <p id="role-content"></p>
+      </section>
+
+      <section id="project-hurdles" class="section fade-in">
+        <h2>Project Hurdles</h2>
+        <p id="hurdles-content"></p>
+      </section>
+
+      <section id="project-results" class="section fade-in">
+        <h2>Project Results & Retrospective Evaluation</h2>
+        <p id="results-content"></p>
+      </section>
+    </main>
+
+    <footer>© 2024 Matt Peterson. All rights reserved.</footer>
+
+    <script src="projects.js"></script>
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+    <script src="project-page.js"></script>
+  </body>
+</html>

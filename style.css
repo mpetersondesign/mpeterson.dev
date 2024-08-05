@@ -1,0 +1,695 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #0099ff88;
+  --text-color: #ecf0f1;
+  --background-color: #1a1a1a;
+  --accent-color: #e74c3c;
+  --body-max-width: 1300px;
+}
+
+html {
+  background-color: #0f1a2b;
+  min-height: 100%;
+}
+
+p {
+  font-size: large;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color); /* Fully opaque */
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0 auto;
+  padding: 0;
+  opacity: 1;
+  max-width: var(--body-max-width);
+  position: relative;
+  z-index: 1; /* Ensure this is higher than background-shapes */
+  overflow-x: hidden;
+}
+
+/* Frutiger Aero-inspired background */
+.background-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.025)
+  );
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  opacity: 0.7;
+  animation: float 20s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-20px, 20px);
+  }
+  50% {
+    transform: translate(20px, -20px);
+  }
+  75% {
+    transform: translate(20px, 20px);
+  }
+}
+
+/* Featured Projects section */
+#featured-projects {
+  background-color: #141414;
+  padding: 20px 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--body-max-width);
+  position: relative;
+}
+
+#featured-projects h2 {
+  text-align: left;
+  font-size: 125%;
+  padding-top: 10px;
+  padding-left: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.projects-container {
+  position: relative;
+  padding: 0 50px; /* Make room for arrows */
+}
+
+.projects-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.projects-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+/* Honors & Accomplishments section */
+.honors-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.honors-column {
+  flex: 1 1 300px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.honors-column h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .honors-container {
+    flex-direction: column;
+  }
+}
+
+.projects-scroll {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar {
+  height: 5px;
+  background-color: #2a2a2a;
+  position: relative;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.custom-scrollbar-thumb {
+  height: 100%;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%; /* This will be updated dynamically */
+}
+
+/* Navigation arrows */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(44, 62, 80, 0.7);
+  color: var(--text-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.scroll-arrow:hover {
+  background-color: rgba(44, 62, 80, 1);
+}
+
+.scroll-arrow.left {
+  left: 10px;
+}
+
+.scroll-arrow.right {
+  right: 10px;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.projects-scroll-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.project-thumbnail {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 200px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-thumbnail:hover {
+  transform: translateY(-5px);
+}
+
+.project-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-thumbnail p {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.project-hero {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* This ensures it takes up the full width of main (1300px) */
+  padding: 0;
+  margin: 0;
+}
+
+.project-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.project-hero-content {
+  z-index: 1;
+  width: 100%;
+  padding: 0 2rem;
+  text-align: left;
+}
+
+.project-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-hero p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Project Sections */
+.section h2 {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Design for Project Pages */
+@media (max-width: 980px) {
+  .project-hero {
+    height: 150px;
+    padding-top: 50px;
+  }
+
+  .project-hero h1 {
+    font-size: 2rem;
+  }
+
+  .project-hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Education section */
+.education-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.education-column {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.education-column h3 {
+  margin-top: 0;
+}
+
+/* Ensure horizontal scrolling works on mobile */
+@media (max-width: 768px) {
+  .projects-scroll-container {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Navigation styles */
+nav {
+  background-color: rgba(44, 62, 80, 0.9);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  max-width: var(--body-max-width);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+nav.scrolled {
+  background-color: rgba(44, 62, 80, 1);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav ul li {
+  position: relative;
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+nav ul li a:hover {
+  color: var(--secondary-color);
+}
+
+/* Dropdown styles */
+nav ul li.has-dropdown:hover > ul.dropdown {
+  display: block;
+}
+
+nav ul li ul.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(44, 62, 80, 0.9);
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li ul.dropdown li {
+  width: 100%;
+  margin: 0;
+}
+
+nav ul li ul.dropdown li a {
+  padding: 0.75rem 1rem;
+  display: block;
+}
+
+nav ul li ul.dropdown li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero section */
+.hero {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* This ensures it takes up the full width of main (1300px) */
+  padding: 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  width: 100%; /* Allow content to span full hero width */
+  padding: 0 1rem; /* Add some padding on the sides */
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s 0.5s forwards;
+  margin: 0;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sections */
+main {
+  width: 100%;
+  max-width: var(--body-max-width); /* This should be 1300px */
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+section:not(.hero, .project-hero) {
+  padding: 1rem 0;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+  section:not(.hero, .project-hero) {
+    padding: 1rem 0;
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+section.hero {
+  width: 100%;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Skills section */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skill-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+/* Animations toggle and theme toggle */
+#animations-toggle,
+#theme-toggle {
+  position: absolute;
+  top: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 1001;
+}
+
+#animations-toggle {
+  left: 1rem;
+}
+
+#theme-toggle {
+  right: 1rem;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Light mode styles */
+body.light-mode {
+  --background-color: #ecf0f1;
+  --text-color: #2c3e50;
+}
+
+body.light-mode nav {
+  background-color: rgba(236, 240, 241, 0.9);
+}
+
+body.light-mode nav.scrolled {
+  background-color: rgba(236, 240, 241, 1);
+}
+
+body.light-mode nav ul li a {
+  color: var(--primary-color);
+}
+
+body.light-mode .hero::before {
+  background: linear-gradient(45deg, #ecf0f1, #bdc3c7);
+}
+
+/* Responsive design */
+@media (max-width: 1300px) {
+  body,
+  nav {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  section {
+    padding: 3rem 1rem;
+  }
+
+  nav ul li ul.dropdown {
+    position: static;
+    transform: none;
+    width: 100%;
+    box-shadow: none;
+  }
+}
+
+/* Recent Employment section */
+#recent-employment {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.employment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#description-content,
+#role-content,
+#hurdles-content,
+#results-content {
+  padding: 0px 50px;
+}
+
+.employment-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.employment-content {
+  padding: 1rem;
+}
+
+.employment-content h3 {
+  margin-top: 0;
+  font-size: 1.75em;
+  font-weight: bolder;
+  margin-bottom: 0.1em;
+  line-height: 1.2em;
+}
+
+.employment-content h4 {
+  font-size: 1.25em;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+}
+
+.employment-content p {
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 1.65em;
+  font-weight: bolder;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  line-height: 1em;
+}
+
+h4 {
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 1.25em;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 0.2em;
+}
