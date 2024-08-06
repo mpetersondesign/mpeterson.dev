@@ -14,10 +14,12 @@ html {
 
 p {
   font-size: large;
+  font-family: "Poppins";
 }
+
 body {
   font-family: "Roboto", sans-serif;
-  background-color: var(--background-color); /* Fully opaque */
+  background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
   margin: 0 auto;
@@ -25,11 +27,10 @@ body {
   opacity: 1;
   max-width: var(--body-max-width);
   position: relative;
-  z-index: 1; /* Ensure this is higher than background-shapes */
+  z-index: 1;
   overflow-x: hidden;
 }
 
-/* Frutiger Aero-inspired background */
 .background-shapes {
   position: fixed;
   top: 0;
@@ -69,7 +70,6 @@ body {
   }
 }
 
-/* Featured Projects section */
 #featured-projects {
   background-color: #141414;
   padding: 20px 0;
@@ -90,22 +90,21 @@ body {
 
 .projects-container {
   position: relative;
-  padding: 0 50px; /* Make room for arrows */
+  padding: 0 50px;
 }
 
 .projects-scroll-container {
   width: 100%;
   overflow-x: auto;
   padding: 1rem 0;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .projects-scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
+  display: none;
 }
 
-/* Honors & Accomplishments section */
 .honors-container {
   display: flex;
   flex-wrap: wrap;
@@ -136,7 +135,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Custom scrollbar */
 .custom-scrollbar {
   height: 5px;
   background-color: #2a2a2a;
@@ -152,10 +150,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 20%; /* This will be updated dynamically */
+  width: 20%;
 }
 
-/* Navigation arrows */
 .scroll-arrow {
   position: absolute;
   top: 50%;
@@ -187,10 +184,9 @@ body {
   right: 10px;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .projects-scroll-container {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .project-thumbnail {
@@ -227,7 +223,7 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
-  width: 100%; /* This ensures it takes up the full width of main (1300px) */
+  width: 100%;
   padding: 0;
   margin: 0;
 }
@@ -265,17 +261,15 @@ body {
   margin: 0;
 }
 
-/* Project Sections */
 .section h2 {
   text-align: left;
   padding-left: 1rem;
 }
 
-/* Video Container */
 .video-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
 }
@@ -288,7 +282,6 @@ body {
   height: 100%;
 }
 
-/* Responsive Design for Project Pages */
 @media (max-width: 980px) {
   .project-hero {
     height: 150px;
@@ -304,7 +297,6 @@ body {
   }
 }
 
-/* Education section */
 .education-container {
   display: flex;
   justify-content: space-between;
@@ -322,14 +314,12 @@ body {
   margin-top: 0;
 }
 
-/* Ensure horizontal scrolling works on mobile */
 @media (max-width: 768px) {
   .projects-scroll-container {
     -webkit-overflow-scrolling: touch;
   }
 }
 
-/* Navigation styles */
 nav {
   background-color: rgba(44, 62, 80, 0.9);
   padding: 1rem 0;
@@ -371,11 +361,14 @@ nav ul li a {
   padding: 0.5rem 1rem;
 }
 
+a {
+  font-family: "Poppins";
+}
+
 nav ul li a:hover {
   color: var(--secondary-color);
 }
 
-/* Dropdown styles */
 nav ul li.has-dropdown:hover > ul.dropdown {
   display: block;
 }
@@ -387,7 +380,7 @@ nav ul li ul.dropdown {
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(44, 62, 80, 0.9);
-  min-width: 200px;
+  min-width: 250px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -405,7 +398,6 @@ nav ul li ul.dropdown li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Hero section */
 .hero {
   height: 400px;
   display: flex;
@@ -414,7 +406,7 @@ nav ul li ul.dropdown li a:hover {
   text-align: center;
   position: relative;
   overflow: hidden;
-  width: 100%; /* This ensures it takes up the full width of main (1300px) */
+  width: 100%;
   padding: 0;
 }
 
@@ -436,8 +428,8 @@ nav ul li ul.dropdown li a:hover {
 
 .hero-content {
   z-index: 1;
-  width: 100%; /* Allow content to span full hero width */
-  padding: 0 1rem; /* Add some padding on the sides */
+  width: 100%;
+  padding: 0 1rem;
 }
 
 .hero h1 {
@@ -463,10 +455,9 @@ nav ul li ul.dropdown li a:hover {
   }
 }
 
-/* Sections */
 main {
   width: 100%;
-  max-width: var(--body-max-width); /* This should be 1300px */
+  max-width: var(--body-max-width);
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
@@ -499,7 +490,6 @@ section h2 {
   text-align: center;
 }
 
-/* Projects grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -517,7 +507,6 @@ section h2 {
   transform: translateY(-5px);
 }
 
-/* Skills section */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -529,10 +518,10 @@ section h2 {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  font-family: "Poppins";
 }
 
-/* Footer */
 footer {
   background-color: var(--primary-color);
   color: var(--text-color);
@@ -541,7 +530,6 @@ footer {
   margin-top: 4rem;
 }
 
-/* Animations toggle and theme toggle */
 #animations-toggle,
 #theme-toggle {
   position: absolute;
@@ -562,7 +550,6 @@ footer {
   right: 1rem;
 }
 
-/* Fade-in animation */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -574,7 +561,6 @@ footer {
   transform: translateY(0);
 }
 
-/* Light mode styles */
 body.light-mode {
   --background-color: #ecf0f1;
   --text-color: #2c3e50;
@@ -596,7 +582,6 @@ body.light-mode .hero::before {
   background: linear-gradient(45deg, #ecf0f1, #bdc3c7);
 }
 
-/* Responsive design */
 @media (max-width: 1300px) {
   body,
   nav {
@@ -626,7 +611,6 @@ body.light-mode .hero::before {
   }
 }
 
-/* Recent Employment section */
 #recent-employment {
   width: 100%;
   margin: 0 auto;
@@ -641,12 +625,41 @@ body.light-mode .hero::before {
 }
 
 #description-content,
-#role-content,
+#contribution-content,
 #hurdles-content,
 #results-content {
   padding: 0px 50px;
+  margin: 0;
+  font-size: larger;
 }
 
+p#description-content {
+  font-size: x-large;
+  text-align: center;
+}
+
+#project-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+#project-video img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+h1#project-name {
+  padding-bottom: 0;
+  padding-top: 25px;
+  margin-bottom: 0;
+  line-height: 1em;
+}
 .employment-item {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
@@ -676,6 +689,12 @@ body.light-mode .hero::before {
   margin-bottom: 0;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins";
+}
 h3 {
   margin-top: 0;
   font-size: 1.65em;
@@ -692,4 +711,42 @@ h4 {
   font-style: normal;
   font-weight: normal;
   margin-bottom: 0.2em;
+}
+
+#project-info {
+  background-color: #141414;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.info-column {
+  flex: 1;
+  text-align: center;
+}
+
+.info-column h3 {
+  margin-bottom: 10px;
+}
+
+#my-roles p {
+  margin: 5px 0;
+}
+
+#project-documentation {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#documentation-container {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#documentation-container iframe {
+  border: none;
 }

@@ -3,12 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title id="page-title">Project Title - Matt Peterson</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="background-shapes"></div>
     <nav id="main-nav">
-      <!-- Navigation will be populated by nav.js -->
+      <!-- <button id="animations-toggle" aria-label="Toggle Animations">A</button> -->
+      <!-- <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">☀</button> -->
     </nav>
 
     <main role="main">
@@ -16,6 +24,7 @@
         <div class="project-hero-content">
           <h1 id="project-name">Project Title</h1>
           <p id="project-subtitle">Project Subtitle or Brief Description</p>
+          <p id="project-subtitle2">Project Subtitle or Brief Description</p>
         </div>
       </section>
       <section id="featured-projects" class="section fade-in">
@@ -55,16 +64,29 @@
         <p id="description-content"></p>
       </section>
 
+      <div id="project-info" class="section fade-in">
+        <div class="info-column">
+          <h3>Team Size</h3>
+          <p id="team-size"></p>
+        </div>
+        <div class="info-column">
+          <h3>My Role</h3>
+          <div id="my-roles"></div>
+        </div>
+        <div class="info-column">
+          <h3>Duration</h3>
+          <p id="duration"></p>
+        </div>
+      </div>
+
       <section id="skills-developed" class="section fade-in">
         <h2>Skills Developed</h2>
-        <div id="skills-container" class="skills-container">
-          <!-- Skills will be populated dynamically -->
-        </div>
+        <div id="skills-container" class="skills-container"></div>
       </section>
 
       <section id="my-role" class="section fade-in">
-        <h2>My Role</h2>
-        <p id="role-content"></p>
+        <h2>My Contributions</h2>
+        <p id="contribution-content"></p>
       </section>
 
       <section id="project-hurdles" class="section fade-in">
@@ -75,6 +97,11 @@
       <section id="project-results" class="section fade-in">
         <h2>Project Results & Retrospective Evaluation</h2>
         <p id="results-content"></p>
+      </section>
+
+      <section id="project-documentation" class="section section fade-in">
+        <h2>Documentation</h2>
+        <div id="documentation-container"></div>
       </section>
     </main>
 

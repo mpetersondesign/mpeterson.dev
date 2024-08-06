@@ -3,12 +3,12 @@ const navData = [
   {
     title: "Academic Projects",
     url: "#",
-    dropdown: [], // We'll populate this dynamically
+    dropdown: [],
   },
   {
     title: "Personal Projects",
     url: "#",
-    dropdown: [], // We'll populate this dynamically
+    dropdown: [],
   },
   { title: "Contact", url: "mailto:mpeterson.business@gmail.com" },
   { title: "LinkedIn", url: "https://www.linkedin.com/in/mpetersondev/" },
@@ -18,7 +18,7 @@ function populateProjectDropdowns() {
   projects.forEach((project) => {
     const dropdownItem = {
       title: project.name,
-      url: `project-template.html?id=${project.id}`,
+      url: `project.html?id=${project.id}`,
     };
     if (project.type === "academic") {
       navData[1].dropdown.push(dropdownItem);
@@ -29,7 +29,7 @@ function populateProjectDropdowns() {
 }
 
 function createNav() {
-  populateProjectDropdowns(); // Call this before creating the nav
+  populateProjectDropdowns();
 
   const nav = document.getElementById("main-nav");
   const ul = document.createElement("ul");
@@ -69,7 +69,6 @@ function createNav() {
 
   nav.appendChild(ul);
 
-  // Add event listeners for dropdown menus
   const dropdowns = document.querySelectorAll(".has-dropdown");
   dropdowns.forEach((dropdown) => {
     dropdown.addEventListener("mouseover", () => {
@@ -79,7 +78,6 @@ function createNav() {
       dropdown.querySelector(".dropdown").style.display = "none";
     });
 
-    // Ensure dropdowns toggle on mobile touch
     dropdown.addEventListener("click", () => {
       const dropdownMenu = dropdown.querySelector(".dropdown");
       dropdownMenu.style.display =
