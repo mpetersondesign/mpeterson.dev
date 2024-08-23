@@ -23,6 +23,31 @@ const projects = [
     type: "personal",
   },
   {
+    id: "built-to-scale",
+    name: "Built to Scale",
+    subtitle: "(GMTK's 2024 Game Jam Submission)",
+    subtitle2: "2.5D Building-based Platformer",
+    thumbnailUrl: "images/built-to-scale-banner.png",
+    youtubeId: "O1BYzdNxpC4",
+    galleryImages: ["", ""],
+    description:
+      'Built to Scale was made for GameMaker ToolKit Jam 2024, where a team composed of myself, an artist, and two sound designers attempted to make a complete game in 96 hours following the theme of "Built to Scale". <br />(<a href="https://mpetersondev.itch.io/built-to-scale">Play it here</a>)',
+    teamSize: 3,
+    myRoles: ["Producer", "Gameplay Programmer"],
+    duration: "96 hours",
+    skills: [
+      "Unity Shader Graph",
+      "Event System",
+      "Modular and Expandable Workflow Strategies",
+    ],
+    contributions:
+      "As the producer and gameplay programmer, I came up with the basic pitch for the project and assigned tasks to our team members. I was the lead for in-engine implementation as well as programming. For this particular project, I was the only one working in editor, so coordinating those implementation approaches and strategies with my teammates was crucial.",
+    hurdles:
+      "For our particular team, 96 hours is much longer than we're used to having to make small experiences, so having that much time was actually more of a hurdle for us than anticipated, despite the comfortability on asset submission it afforded us. To manage our time efficiently, we blocked out a set amount of hours each day we would spend working in close tandem with each other for personal accountability of how we were spending our time, and had a lot more enthusiasm and production as a result.",
+    results: "Results being tallied!",
+    type: "personal",
+  },
+  {
     id: "castle-climber-redux",
     name: "Castle Climber REDUX",
     subtitle: "(Technical/UX Design DigiPen Capstone Project)",
